@@ -5,4 +5,7 @@ import Foundation
         print(value)
         return value
     }
+  @objc public func showAlert(_ title: String, message : String){
+      print(title)
+    }
 }

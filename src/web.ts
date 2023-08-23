@@ -7,4 +7,14 @@ export class AlertPluginWeb extends WebPlugin implements AlertPluginPlugin {
     console.log('ECHO', options);
     return options;
   }
+
+  async showAlert(options: { title?: string; message: string }): Promise<void> {
+    const formattedMessage = options.title
+      ? `${options.title}\n\n${options.message}`
+      : options.message;
+    alert(formattedMessage);
+  }
 }
+
+const AlertPlugin = new AlertPluginWeb();
+export { AlertPlugin };
